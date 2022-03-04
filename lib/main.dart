@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     title: 'Test navigazione',
     home: Main(),
   ));
 }
 
 class Main extends StatelessWidget {
+  const Main({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,12 +17,13 @@ class Main extends StatelessWidget {
         title: const Text('Prima pagina'),
       ),
       body: Center(
-        child: RaisedButton(
-          child: Text('Vai'),
+        child: MaterialButton(
+          color: Colors.red,
+          child: const Text('Pagina 2'),
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => SecondPage()),
+              MaterialPageRoute(builder: (context) => const SecondPage()),
             );
           },
         ),
@@ -30,6 +33,8 @@ class Main extends StatelessWidget {
 }
 
 class SecondPage extends StatelessWidget {
+  const SecondPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +42,8 @@ class SecondPage extends StatelessWidget {
         title: const Text("Seconda pagina"),
       ),
       body: Center(
-        child: RaisedButton(
+        child: MaterialButton(
+          color: Colors.amber,
           onPressed: () {
             Navigator.pop(context);
           },
