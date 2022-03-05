@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(
+  runApp(MaterialApp(
     title: 'Test navigazione',
     home: Main(),
+    routes: {"seconda": (context) => const SecondPage()},
   ));
 }
 
@@ -21,10 +22,7 @@ class Main extends StatelessWidget {
           color: Colors.red,
           child: const Text('Pagina 2'),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SecondPage()),
-            );
+            Navigator.pushNamed(context, "seconda");
           },
         ),
       ),
