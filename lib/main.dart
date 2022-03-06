@@ -4,7 +4,9 @@ void main() {
   runApp(MaterialApp(
     title: 'Test navigazione',
     home: Main(),
-    routes: {"seconda": (context) => const SecondPage()},
+    routes: {
+      "seconda": (context) => const SecondPage()
+    },
   ));
 }
 
